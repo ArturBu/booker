@@ -1,0 +1,34 @@
+com:
+  booker:
+    appointment-time-range: MIN_30
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:booker_db;DB_CLOSE_DELAY=-1
+    platform: h2
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+
+lombok:
+  anyConstructor:
+    addConstructorProperties:  true
+config:
+  stopBubbling: true
